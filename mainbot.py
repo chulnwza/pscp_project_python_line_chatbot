@@ -1,10 +1,9 @@
-#code by Stackpython
-#Import Library
 import json
 import os
 from flask import Flask
 from flask import request
 from flask import make_response
+import menuscript as menu
 
 # Flask
 app = Flask(__name__)
@@ -33,9 +32,17 @@ def generating_answer(question_from_dailogflow_dict):
     intent_group_question_str = question_from_dailogflow_dict["queryResult"]["intent"]["displayName"] 
 
     #ลูปตัวเลือกของฟังก์ชั่นสำหรับตอบคำถามกลับ
-    if intent_group_question_str == 'หิวจัง':
-        answer_str = menu_recormentation()
-    else: answer_str = "ผมไม่เข้าใจ คุณต้องการอะไร"
+    if intent_group_question_str == 'กุ้ง':
+        answer_str = menu.menuscript('กุ้ง')
+    elif intent_group_question_str == 'หอย':
+        answer_str = menu.menuscript('หอย')
+    elif intent_group_question_str == 'ปู':
+        answer_str = menu.menuscript('ปู')
+    elif intent_group_question_str == 'ปลา':
+        answer_str = menu.menuscript('ปลา')
+    elif intent_group_question_str == 'ปลาหมึก':
+        answer_str = menu.menuscript('ปลาหมึก')
+    else: answer_str = "เราไม่เข้าใจค่ะ คุณต้องการอะไร"
 
     #สร้างการแสดงของ dict 
     answer_from_bot = {"fulfillmentText": answer_str}
@@ -44,11 +51,6 @@ def generating_answer(question_from_dailogflow_dict):
     answer_from_bot = json.dumps(answer_from_bot, indent=4) 
     
     return answer_from_bot
-
-def menu_recormentation(): #ฟังก์ชั่นสำหรับเมนูแนะนำ
-    menu_name = 'ข้าวขาหมู'
-    answer_function = menu_name + ' สิ น่ากินนะ'
-    return answer_function
 
 #Flask
 if __name__ == '__main__':
