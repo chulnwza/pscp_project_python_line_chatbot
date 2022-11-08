@@ -33,15 +33,15 @@ def generating_answer(question_from_dailogflow_dict):
 
     #ลูปตัวเลือกของฟังก์ชั่นสำหรับตอบคำถามกลับ
     if intent_group_question_str == 'กุ้ง':
-        answer_str = menu.menuscript('กุ้ง')
+        answer_str = menu.show_menuscript('กุ้ง')
     elif intent_group_question_str == 'หอย':
-        answer_str = menu.menuscript('หอย')
+        answer_str = menu.show_menuscript('หอย')
     elif intent_group_question_str == 'ปู':
-        answer_str = menu.menuscript('ปู')
+        answer_str = menu.show_menuscript('ปู')
     elif intent_group_question_str == 'ปลา':
-        answer_str = menu.menuscript('ปลา')
+        answer_str = menu.show_menuscript('ปลา')
     elif intent_group_question_str == 'ปลาหมึก':
-        answer_str = menu.menuscript('ปลาหมึก')
+        answer_str = menu.show_menuscript('ปลาหมึก')
     else: answer_str = "เราไม่เข้าใจค่ะ คุณต้องการอะไร"
 
     #สร้างการแสดงของ dict 

@@ -49,3 +49,14 @@ def menuscript(menutype):
                     recommend_menu.append((row[0], row[1].split(' ,')))
                 first_row += 1
     return recommend_menu
+
+def show_menuscript(ing_type):
+    """test menuscript"""
+    output = ''
+    buf = menuscript(ing_type)
+    for i in buf:
+        ing = i[0]
+        rec = ' ,'.join(i[1])
+        output += '%s เมนูแนะนำ : %s\n'%(ing, rec)
+    return output
+
