@@ -4,6 +4,7 @@ from flask import Flask
 from flask import request
 from flask import make_response
 import menuscript as menu
+import tablescript
 
 # Flask
 app = Flask(__name__)
@@ -42,6 +43,8 @@ def generating_answer(question_from_dailogflow_dict):
         answer_str = menu.show_menuscript('ปลา')
     elif intent_group_question_str == 'ปลาหมึก':
         answer_str = menu.show_menuscript('ปลาหมึก')
+    elif intent_group_question_str == 'โต๊ะว่าง':
+        answer_str = menu.check_table()
     else: answer_str = "เราไม่เข้าใจค่ะ คุณต้องการอะไร"
 
     #สร้างการแสดงของ dict 

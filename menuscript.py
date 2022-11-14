@@ -60,3 +60,17 @@ def show_menuscript(ing_type):
         output += '%s เมนูแนะนำ : %s\n'%(ing, rec)
     return output
 
+def check_table():
+    """table"""
+    with open('table.csv', mode='r', newline='', encoding='utf8') as mycsv:
+        reader = csv.reader(mycsv)
+        count = 0
+        table_z = []
+        for i in reader:
+            if count != 0 and len(i[1])==0:
+                table_z.append(i[0])
+            count += 1
+    output = 'โต๊ะว่าง :' + '\n'
+    for j in table_z:
+        output += '%s \n' %j
+    return output
