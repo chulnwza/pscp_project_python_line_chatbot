@@ -70,7 +70,10 @@ def check_table():
             if count != 0 and len(i[1])==0:
                 table_z.append(i[0])
             count += 1
-    output = 'โต๊ะว่าง :' + '\n'
+    output = 'โต๊ะว่าง :' + ' '
     for j in table_z:
-        output += '%s \n' %j
+        output += '%s, ' %j
+    output = output.strip(', ')
     return output
+
+print(check_table())
