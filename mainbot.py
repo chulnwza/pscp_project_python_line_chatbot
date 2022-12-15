@@ -45,7 +45,7 @@ def generating_answer(question_from_dailogflow_dict):
         answer_str = menu.show_menuscript('ปลาหมึก')
     elif intent_group_question_str == 'โต๊ะว่าง':
         answer_str = menu.check_table()
-    else: answer_str = "เราไม่เข้าใจค่ะ คุณต้องการอะไร"
+    else: answer_str = "ถ้าหากต้องการจองโต๊ะรบกวนติดต่อ 080000000 ค่ะ " + "\n" + "หากต้องการเช็คว่ามีวัตถุดิบและเมนูอะไรบ้างท่านสามารถพิมพิ์ กุ้ง หอย ปู ปลา ปลาหมึก เพื่อเช็คค่ะ" + "\n" + "และหากท่านต้องการตรวจสอบโต๊ะว่างสามารถพิมพ์ เช็คโต๊ะ หรือ โต๊ะว่างเพื่อตรวจสอบได้เลยค่ะ"
 
     #สร้างการแสดงของ dict 
     answer_from_bot = {"fulfillmentText": answer_str}
